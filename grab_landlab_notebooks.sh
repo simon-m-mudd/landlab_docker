@@ -18,7 +18,7 @@ if [ -d /landlab/notebooks ]
     echo "I am grabbing the notebooks from the web"
     echo "========================================\n\n"
          
-    wget https://github.com/simon-m-mudd/landlab_docker/blob/master/notebooks.zip?raw=true
+    wget https://raw.githubusercontent.com/simon-m-mudd/landlab_docker/master/notebooks.zip
     unzip notebooks.zip
     
     # Clean up
