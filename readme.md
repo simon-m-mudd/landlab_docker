@@ -41,19 +41,26 @@ $ docker run -it -v C:\landlab:/landlab muddpile/landlab_docker
   1. The `-it` means "interactive".
   2. The `-v` stands for "volume" and in practice it links the files in the docker container with files in your host operating system. 
   3. After the `-v` you need to tell docker where the directories are on both the host operating system (in this case `C:\landlab`) and the container (in this case `/landlab`). These are separated by a colon (`:`).
-3. Once you do this you will get a `#` symbol showing that you are inside the container. You can now do *LSDTopoTools* stuff. 
+3. Once you do this you will get a `#` symbol showing that you are inside the container. If you don't have the example notebooks, grab them with
+```console
+# sh grab_landlab_notebooks.sh
+```
 
 
 #### Running a jupyter notebook from this container
 
 1. The lsdpytools container can also serve as a host for [jupyter notebooks](https://jupyter.org/)
-2. You need to open your docker container with a port:
+2. If you don't have the example notebooks, grab them with
+```console
+# sh grab_landlab_notebooks.sh
+```
+2. You then need to open your docker container with a port:
 
 ```console
 # docker run -it -v C:\landlab:/landlab -p 8888:8888 muddpile/landlab_docker
 ```
 
-  * Note that you should update the `C:\LSDTopoTools` to reflect the directory structure on your locak machine. 
+  * Note that you should update the `C:\landlab` to reflect the directory structure on your locak machine. 
 
 3. Then, inside the container, start the notebook:
 

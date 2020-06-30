@@ -48,5 +48,6 @@ RUN conda install -y ipython ipykernel jupyter
 # Set the working directory
 WORKDIR /landlab
 
-COPY notebooks.zip /landlab
-RUN unzip notebooks.zip
+# Copy the startup script
+COPY grab_landlab_notebooks.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/Start_LSDTT.sh
