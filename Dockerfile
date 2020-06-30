@@ -25,7 +25,7 @@ RUN conda install -y git python=3
 RUN conda install -y wget unzip
 
 # Now install landlab
-RUN conda intall -y landlab
+RUN conda install -y landlab
 
 # Now add some conda packages
 #RUN conda install -y gdal rasterio geopandas matplotlib=3.1 numpy scipy pytables numba feather-format pandas pip pybind11 xtensor xtensor-python

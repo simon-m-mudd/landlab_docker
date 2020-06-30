@@ -20,10 +20,10 @@ These are the bare bones instructions. For a bit more detail and potential bug f
 
 ### Running the container
 
-#### Part 1: set up an LSDTopoTools directory on your host machine
+#### Part 1: set up a directory on your host machine to put landlab stuff. (in examples, this will be C:\landlab)
 
-1. You will want to be able to see *LSDTopoTools* output on your host operating system, so we will need to create a directory for hosting your *LSDTopoTools* data, code, and scripts. 
-2. For the purposes of this tutorial, I will assume you are using windows and that you have made a directory `C:\LSDTopoTools`. 
+1. You will want to be able to see *landlab* output on your host operating system, so we will need to create a directory for hosting your *landlab* data, code, and scripts. 
+2. For the purposes of this tutorial, I will assume you are using windows and that you have made a directory `C:\landlab`. 
   * You can put this directory anywhere you want as long as you remember where it is. You don't need to put anything in this directory yet. 
   
 #### Part 2: Download and run the container
@@ -32,15 +32,15 @@ _Preamble_: Once you have downloaded docker, you can control how much memory you
 
 1. To get the container, go into a terminal (MacOS or Linux) or Powershell window (Windows) that has docker enabled and run:
 ```console
-$ docker pull simon-m-mudd/landlab_docker
+$ docker pull muddpile/landlab_docker
 ```
 2. Now you need to run the container:
 ```console
-$ docker run -it -v C:\landlab:/landlab simon-m-mudd/landlab_docker
+$ docker run -it -v C:\landlab:/landlab muddpile/landlab_docker
 ```
   1. The `-it` means "interactive".
   2. The `-v` stands for "volume" and in practice it links the files in the docker container with files in your host operating system. 
-  3. After the `-v` you need to tell docker where the directories are on both the host operating system (in this case `C:\LSDTopoTools`) and the container (in this case `/LSDTopoTools`). These are separated by a colon (`:`).
+  3. After the `-v` you need to tell docker where the directories are on both the host operating system (in this case `C:\landlab`) and the container (in this case `/landlab`). These are separated by a colon (`:`).
 3. Once you do this you will get a `#` symbol showing that you are inside the container. You can now do *LSDTopoTools* stuff. 
 
 
@@ -50,7 +50,7 @@ $ docker run -it -v C:\landlab:/landlab simon-m-mudd/landlab_docker
 2. You need to open your docker container with a port:
 
 ```console
-# docker run -it -v C:\LSDTopoTools:/LSDTopoTools -p 8888:8888 lsdtopotools/lsdtt_pytools_docker
+# docker run -it -v C:\landlab:/landlab -p 8888:8888 muddpile/landlab_docker
 ```
 
   * Note that you should update the `C:\LSDTopoTools` to reflect the directory structure on your locak machine. 
@@ -104,7 +104,7 @@ Once you have done this you will need to log out and log back in again.
 
 #### Docker for Windows
 
-I have not made any scientific study of this but most *LSDTopoTools* users are on Windows operating systems. 
+I have not made any scientific study of this but many scientific users are on Windows operating systems. 
 
 Firstly, you need to have *Windows 10 Enterprise*. It will not work otherwise (well, that is [not exactly true](https://stefanscherer.github.io/yes-you-can-docker-on-windows-7/) but getting it to work on Windows 7 is a massive pain). If you don't have Windows 10 Enterprise but are on Windows you probably should use Vagrant; see [our vagrant documentation](https://lsdtopotools.github.io/LSDTT_documentation/LSDTT_installation.html#_installing_lsdtopotools_using_virtualbox_and_vagrant). If you do have Windows 10 enterprise then you can download and install Docker for Windows CE. After you install this you will need to restart your computer not once but twice: once after install and a second time to activate the hyper-V feature, which allows you to have 64 bit guest operating systems.
 
