@@ -47,3 +47,6 @@ RUN conda install -y ipython ipykernel jupyter
 
 # Set the working directory
 WORKDIR /landlab
+
+COPY notebooks.zip /landlab
+RUN unzip notebooks.zip
