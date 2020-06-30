@@ -50,17 +50,19 @@ $ docker run -it -v C:\landlab:/landlab muddpile/landlab_docker
 #### Running a jupyter notebook from this container
 
 1. The lsdpytools container can also serve as a host for [jupyter notebooks](https://jupyter.org/)
-2. If you don't have the example notebooks, grab them with
-```console
-# sh grab_landlab_notebooks.sh
-```
+
 2. You then need to open your docker container with a port:
 
 ```console
-# docker run -it -v C:\landlab:/landlab -p 8888:8888 muddpile/landlab_docker
+> docker run -it -v C:\landlab:/landlab -p 8888:8888 muddpile/landlab_docker
 ```
 
-  * Note that you should update the `C:\landlab` to reflect the directory structure on your locak machine. 
+  * Note that you should update the `C:\landlab` to reflect the directory structure on your local machine. 
+
+2. You will end up inside a docker container with the prompt `#`. If you don't have the example notebooks, grab them with
+```console
+# sh grab_landlab_notebooks.sh
+```
 
 3. Then, inside the container, start the notebook:
 
