@@ -50,4 +50,4 @@ WORKDIR /landlab
 
 # Copy the startup script
 COPY grab_landlab_notebooks.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/Start_LSDTT.sh
+RUN chmod +x /usr/local/bin/grab_landlab_notebooks.sh
