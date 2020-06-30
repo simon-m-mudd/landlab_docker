@@ -43,15 +43,15 @@ $ docker run -it -v C:\landlab:/landlab muddpile/landlab_docker
   3. After the `-v` you need to tell docker where the directories are on both the host operating system (in this case `C:\landlab`) and the container (in this case `/landlab`). These are separated by a colon (`:`).
 3. Once you do this you will get a `#` symbol showing that you are inside the container. If you don't have the example notebooks, grab them with
 ```console
-# sh grab_landlab_notebooks.sh
+# grab_landlab_notebooks.sh
 ```
 
 
 #### Running a jupyter notebook from this container
 
-1. The lsdpytools container can also serve as a host for [jupyter notebooks](https://jupyter.org/)
+1. The landlab container can also serve as a host for [jupyter notebooks](https://jupyter.org/)
 
-2. You then need to open your docker container with a port:
+2. You need to open your docker container with a port (using the `-p` flag, `8888:8888` is a common port):
 
 ```console
 > docker run -it -v C:\landlab:/landlab -p 8888:8888 muddpile/landlab_docker
@@ -61,7 +61,7 @@ $ docker run -it -v C:\landlab:/landlab muddpile/landlab_docker
 
 2. You will end up inside a docker container with the prompt `#`. If you don't have the example notebooks, grab them with
 ```console
-# sh grab_landlab_notebooks.sh
+# grab_landlab_notebooks.sh
 ```
 
 3. Then, inside the container, start the notebook:
