@@ -40,15 +40,10 @@ RUN conda install -y landlab
 #RUN conda install -y fiona utm pyproj cartopy
 
 # Now the ipython stack for creating local ipython servers
-#RUN conda install -y ipython ipykernel
+RUN conda install -y ipython ipykernel jupyter
 
 # Now an environment for building conda
 #RUN conda install -y conda-build
-
-
-# Now install the final bits for you jupyterhub functionality
-# and some web mapping
-#RUN conda install -y jupyter folium
 
 # Set the working directory
 WORKDIR /landlab

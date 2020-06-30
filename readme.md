@@ -2,7 +2,7 @@
 
 ![](https://raw.githubusercontent.com/simon-m-mudd/landlab_docker/master/images/Landlab-logo.png)
 
-This docker container has all the components you need to run the landlab.  
+This docker container has all the components you need to run the landlab. It is made by Simon Mudd and not the landlab team so any bugs in the container are not their fault!
 
 It is built within a miniconda parent container and also includes ipython so that you can host and jupyter notebook to run examples. 
 
